@@ -64,3 +64,49 @@ let player: {
     pName: "Moin Ali",
     pSalary: 12500 
 }
+
+interface Player {
+    playerName: string,
+    playerAge: number,
+    playerSalary: number,
+    isPlaying?: boolean
+}
+
+const Moin: Player = {
+    playerName: "Moin Ali",
+    playerAge: 33,
+    playerSalary: 12500,
+    isPlaying: true
+}
+
+const Adil: Player = {
+    playerName: "Adil Rashid",
+    playerAge: 33,
+    playerSalary: 15500
+}
+
+// function getBonus(employee: {salary: Player}){
+function getBonus(employee: {salary: number}){
+    return employee.salary * 0.1;
+}
+const newEmployee = {salary: 7000};
+getBonus(newEmployee);
+
+class Person {
+    name: string;
+    private _partner: string;
+    readonly fatherName: string
+    constructor(name: string, father: string){
+        this.name = name;
+        this._partner = name;
+        this.fatherName = name;
+    }
+    getName(): string{
+        return this.name + "" + this._partner;
+    }
+}
+
+const sam = new Person('Samuel', 'David');
+console.log('name', sam.name, sam.fatherName);
+const samName: string = sam.getName();
+sam.name = "Ben";
